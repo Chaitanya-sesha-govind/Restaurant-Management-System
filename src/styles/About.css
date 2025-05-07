@@ -1,0 +1,224 @@
+/* ========== Global Styles ========== */
+.about-page-container {
+    background: linear-gradient(to right, #141e30, #243b55);
+    color: #f0f0f0;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    padding-top: 100px;
+    overflow-x: hidden;
+
+  }
+
+  .a
+  
+
+  /* ========== Header ========== */
+  .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(20, 30, 48, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 20px 0;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .header p {
+    font-size: 26px;
+    font-weight: 600;
+    color: #00e6e6;
+    text-shadow: 0 0 6px rgba(0, 255, 255, 0.4);
+  }
+  
+  /* ========== Main Content ========== */
+  .about-main-content {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .about-intro {
+
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center;     /* Vertical centering */
+    text-align: center;
+    padding: 40px;
+  }
+  
+  .about-title {
+    font-size: 38px;
+    color: #00ffff;
+    margin: 0;
+  }
+  
+  
+  .about-description {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 50px;
+    color: #cccccc;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* ========== Story Section ========== */
+  .about-story h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #f9f9f9;
+  }
+  
+  .about-story p {
+    max-width: 700px;
+    margin: auto;
+    color: #d1d1d1;
+    line-height: 1.7;
+  }
+  
+  /* ========== Features Grid ========== */
+  .about-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  .card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 25px;
+    backdrop-filter: blur(15px);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 255, 255, 0.2);
+  }
+  
+  .card h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #00ffff;
+  }
+  
+  .card p {
+    font-size: 15px;
+    color: #e6e6e6;
+    line-height: 1.6;
+  }
+  
+  /* ========== Testimonials ========== */
+  .about-testimonials {
+    margin-top: 60px;
+    text-align: center;
+  }
+  
+  .about-testimonials h2 {
+    color: #00ffff;
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  
+  .testimonial-card {
+    background: rgba(255, 255, 255, 0.07);
+    padding: 20px;
+    border-radius: 14px;
+    max-width: 600px;
+    margin: 20px auto;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .testimonial-card p {
+    font-style: italic;
+    color: #e0e0e0;
+    margin-bottom: 10px;
+  }
+  
+  .testimonial-card h4 {
+    color: #00cccc;
+    font-weight: normal;
+    font-size: 15px;
+  }
+  
+  /* ========== Call to Action ========== */
+  .about-cta {
+    text-align: center;
+    margin: 60px auto 30px;
+  }
+  
+  .about-cta h2 {
+    font-size: 28px;
+    color: #00ffff;
+  }
+  
+  .about-cta p {
+    color: #d0d0d0;
+    max-width: 700px;
+    margin: 10px auto 30px;
+  }
+  
+  .about-cta button {
+    background-color: #00cccc;
+    color: white;
+    padding: 12px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .about-cta button:hover {
+    background-color: #009999;
+  }
+  
+  /* ========== Responsive ========== */
+  @media (max-width: 768px) {
+    .about-title {
+      font-size: 30px;
+    }
+  
+    .card {
+      padding: 20px;
+    }
+  
+    .testimonial-card {
+      padding: 15px;
+    }
+  
+    .about-cta button {
+      width: 90%;
+    }
+  }
+  
+  .email-contact {
+    font-size: 18px;
+    color: #00e6e6;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px 20px;
+    border-radius: 12px;
+    display: inline-block;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    margin: 20px auto;
+    text-align: center;
+  }
+  
+  .email-contact:hover {
+    color: #ffffff;
+    background: rgba(0, 255, 255, 0.1);
+    box-shadow: 0 6px 20px rgba(0, 255, 255, 0.3);
+    cursor: pointer;
+  }
+  

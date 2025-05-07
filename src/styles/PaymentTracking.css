@@ -1,0 +1,293 @@
+/* Unified Glassmorphic Elegance */
+.payment-tracking-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  animation: floatInUp 0.6s ease-out forwards;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Rotating background aura */
+.payment-tracking-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 180, 148, 0.12), transparent 70%);
+  animation: rotateGradient 25s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotateGradient {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes floatInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header Styling */
+.payment-tracking-container h2 {
+  font-size: 2.5rem;
+  color: #2d3436;
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+.payment-tracking-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #00b894, #0984e3);
+  border-radius: 10px;
+}
+
+/* Table Container */
+.table-responsive {
+  overflow-x: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Table Styles */
+.payment-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.payment-table th, .payment-table td {
+  padding: 18px 24px;
+  font-size: 1.05rem;
+  color: #2d3436;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: background 0.3s ease;
+}
+
+.payment-table th {
+  background: linear-gradient(to right, #2d3436, #34495e);
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.payment-table tr:hover td {
+  background-color: rgba(240, 240, 240, 0.8);
+}
+
+.payment-table td:last-child {
+  text-align: right;
+  font-weight: 600;
+}
+
+/* Status Badges */
+.status-badge {
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-block;
+  min-width: 100px;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+
+.status-badge.paid {
+  background-color: rgba(46, 213, 115, 0.15);
+  color: #00b894;
+}
+
+.status-badge.pending {
+  background-color: rgba(253, 203, 110, 0.15);
+  color: #f39c12;
+}
+
+.status-badge.cancelled {
+  background-color: rgba(255, 107, 107, 0.15);
+  color: #ff4757;
+}
+
+/* Pay Now Button */
+.pay-now-button {
+  display: block;
+  margin: 40px auto 0;
+  padding: 16px 36px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 50px;
+  color: #fff;
+  background: linear-gradient(135deg, #00b894, #0984e3);
+  box-shadow: 0 10px 25px rgba(0, 184, 148, 0.4);
+  text-decoration: none;
+  transition: all 0.4s ease;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.pay-now-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: 0.5s;
+}
+
+.pay-now-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0, 184, 148, 0.5);
+}
+
+.pay-now-button:hover::before {
+  left: 100%;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+  .payment-tracking-container {
+    padding: 20px;
+    margin: 20px;
+    border-radius: 16px;
+  }
+
+  .payment-table th,
+  .payment-table td {
+    padding: 14px 12px;
+  }
+
+  .payment-tracking-container h2 {
+    font-size: 2rem;
+  }
+
+  .pay-now-button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .payment-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .status-badge {
+    min-width: 80px;
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+}
+
+/* Enhanced Action Cell UI */
+
+
+.action-cell {
+  width: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px 0;
+}
+
+.status-update-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffffcc; /* semi-transparent white */
+  backdrop-filter: blur(8px);
+  padding: 10px 16px;
+  border-radius: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s ease-in-out;
+}
+
+.status-select {
+  appearance: none;
+  padding: 10px 16px;
+  border-radius: 30px;
+  background-color: #f8f9fa;
+  border: 1px solid #d0d7de;
+  font-size: 0.95rem;
+  color: #212529;
+  font-weight: 500;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  outline: none;
+  cursor: pointer;
+}
+
+.status-select:hover,
+.status-select:focus {
+  background-color: #ffffff;
+  border-color: #4c6ef5;
+  box-shadow: 0 0 0 3px rgba(76, 110, 245, 0.2);
+}
+
+.update-button {
+  padding: 8px 16px;
+  border-radius: 25px;
+  border: none;
+  background-color: #4c6ef5;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.25s ease;
+}
+
+.update-button:hover {
+  background-color: #3b5bdb;
+}
+
+.update-button:active {
+  transform: scale(0.98);
+}
+
+
+@media (max-width: 768px) {
+  .action-cell {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .status-update-control {
+    flex-direction: column;
+    gap: 8px;
+    border-radius: 20px;
+    padding: 12px;
+  }
+
+  .update-button, .status-select {
+    width: 100%;
+  }
+}

@@ -1,0 +1,138 @@
+.tables-container {
+  padding: 32px 16px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+  max-width: 1100px;
+  margin: 40px auto 0 auto;
+  border: none;
+  position: relative;
+  backdrop-filter: blur(6px);
+}
+
+/* Responsive grid: 3 per row, then 2, then 1 */
+.table-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  justify-items: center;
+}
+
+@media (max-width: 900px) {
+  .table-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+@media (max-width: 600px) {
+  .table-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+/* Table box with glassmorphism and hover effect */
+.table-box {
+  background: rgba(255,255,255,0.96);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.11);
+  border: none;
+  padding: 20px 16px 22px 16px;
+  min-width: 200px;
+  max-width: 280px;
+  transition: transform 0.18s, box-shadow 0.18s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.table-box:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 36px 0 rgba(31, 38, 135, 0.17);
+  border: 1.5px solid #6c5ce7;
+}
+
+/* Table header with accent underline */
+.table-header {
+  width: 100%;
+  border-bottom: 1.5px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2d3436;
+  position: relative;
+}
+
+.table-header::after {
+  content: '';
+  display: block;
+  margin: 8px auto 0 auto;
+  width: 40%;
+  height: 3px;
+  background: linear-gradient(90deg, #6c5ce7, #00b894, #fdcb6e);
+  border-radius: 2px;
+}
+
+/* Table body */
+.table-body {
+  padding-top: 10px;
+  width: 100%;
+  text-align: center;
+  color: #636e72;
+  font-size: 1rem;
+}
+
+/* Animated select button */
+.select-button {
+  background: linear-gradient(90deg, #53cbef 0%, #6c5ce7 100%);
+  color: #fff;
+  padding: 11px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(31, 38, 135, 0.13);
+  transition: background 0.3s, color 0.2s, transform 0.15s;
+  margin-top: 18px;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.select-button:hover {
+  background: linear-gradient(90deg, #fdcb6e 0%, #00b894 100%);
+  color: #222;
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px #6c5ce733;
+}
+
+/* Fade-in animation for table cards */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* Responsive adjustments for cards and padding */
+@media (max-width: 900px) {
+  .table-box {
+    min-width: 150px;
+    max-width: 220px;
+    padding: 14px 8px 16px 8px;
+  }
+}
+@media (max-width: 600px) {
+  .tables-container {
+    padding: 10px 2px;
+    border-radius: 12px;
+  }
+  .table-box {
+    min-width: 110px;
+    max-width: 150px;
+    padding: 8px 4px 10px 4px;
+  }
+}

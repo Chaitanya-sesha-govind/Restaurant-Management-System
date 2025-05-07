@@ -1,0 +1,38 @@
+
+.homepage-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 0 50px;
+    background-color: #100b0b;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .title-container h1 {
+    font-size: 3rem;
+    color: #333;
+  }
+  
+  .buttons-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .buttons-container button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .buttons-container button:hover {
+    background-color: #0056b3;
+  }
+  
