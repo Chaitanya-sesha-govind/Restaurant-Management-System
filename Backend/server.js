@@ -481,48 +481,8 @@ app.post('/staff-register', async (req, res) => {
     return res.status(500).json({ message: 'Server error' });
   }
 });
-app.get("/auth/google",passport.authenticate("google", {
-  scope:  ["profile", "email"],
-}));
-passport.use("google", new GoogleStrategy(
-{
-  clientID : process.env.GOOGLE_CLIENT_ID,
-  clientSecret:process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: "http://localhost:4000/auth/google/callback",
-  userProfileURL:"https://www.googleapis.com/oauth2/v3/userinfo  "
-}, async(accessToken,refreshToken,profile,cb)=>
-{
-  try {
-    console.log(profile);
-    const result = await db.query("SELECT * FROM customer WHERE name = $1", [
-      profile.email,
-    ]);
-    let token;
-    if (result.rows.length === 0) {
-      const newUser = await db.query(
-        "INSERT INTO customer(name, password) VALUES ($1, $2)",
-        [profile.email, "google"]
-      );
-      const username=profile.email;
-       token = jwt.sign(
-        { username, id: username },
-        SECRET_KEY,                 
-        { expiresIn: "1h" }         
-      );
-      return cb(null, { newUser,token});
-    } else {
-         token = jwt.sign(
-        { username: result.name, id: result.id }, 
-        SECRET_KEY,                           
-        { expiresIn: "1h" }                  
-      );
-      return cb(null, {result,token});
-    }
-  } catch (err) {
-    return cb(err);
-  }
 
-}));
+
 
 
 passport.serializeUser((user, cb) => {
